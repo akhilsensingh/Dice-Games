@@ -1,0 +1,5 @@
+#This code uses the random module to generate random numbers to simulate rolling dice. 
+#The roll_dice function returns a random number between 1 and 6. 
+#The play_game function implements the game logic, allowing the player to roll the dice 
+#and keep track of their score and the computer's score. The game continues until the player 
+#decides to stop rolling the dice, and then a winner is determined based on the final scores.

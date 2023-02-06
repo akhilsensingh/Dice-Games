@@ -1,0 +1,29 @@
+def play_game(num_players):
+    print(f"Welcome to the Dice Game with {num_players} players!")
+    scores = [0 for _ in range(num_players)]
+    #Taking input for different player names to differntiate them
+    names = [input(f"Enter name for player {i + 1}: ") for i in range(num_players)]
+
+    while True:
+        for i in range(num_players):
+            print(f"{names[i]}, it's your turn. Roll the dice? (yes/no)")
+            roll = input()
+
+            if roll == "yes":
+                player_roll = roll_dice(1)[0]
+                print(f"You rolled a {player_roll}")
+                scores[i] += player_roll
+            elif roll == "no":
+                break
+            else:
+                print("Invalid input. Please enter 'yes' or 'no'.")
+        
+        if "no" in roll:
+            break
+
+    winner = names[scores.index(max(scores))]
+    print(f"{winner} wins with a score of {max(scores)}! Congratulations.")
+
+#Input of no. of player
+num_players = int(input("Enter number of players: "))
+play_game(num_players)
